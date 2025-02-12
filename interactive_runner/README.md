@@ -1,6 +1,7 @@
 # 互動程式執行器
 
 這是一個簡單的 Python 腳本，用於同時運行兩個互動程式（judge 和 solver），讓它們能夠相互通信，並以不同的前綴顯示它們的輸出。
+https://codeforces.com/contest/2067/problem/D
 
 ## 系統需求
 

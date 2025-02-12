@@ -1,6 +1,12 @@
+# -*- coding: utf-8 -*-
 import asyncio
 import sys
 from asyncio.subprocess import PIPE
+
+# 設置默認編碼為 UTF-8
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
 
 JUDGE_PREFIX = "[JUDGE] "
 SOLVER_PREFIX = "[SOLVE] "
@@ -21,7 +27,7 @@ async def pipe_data(name: str, reader: asyncio.StreamReader, writers: list, stdo
             
             # 輸出到終端
             if stdout:
-                stdout.buffer.write(prefix.encode() + data)
+                stdout.buffer.write(prefix.encode('utf-8') + data)
                 stdout.flush()
     except Exception as e:
         print(f"Pipe error {name}: {e}", file=sys.stderr)
